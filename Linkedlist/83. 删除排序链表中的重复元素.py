@@ -45,7 +45,23 @@ class LinkList:
             else:
                 cur = cur.next
 
-        return head 
+        return head
+    
+    # 206. 反转链表
+    def reverseList(self, head: ListNode) -> ListNode:
+        pre = None
+        cur = head
+        # 遍历链表，while循环里面的内容其实可以写成一行
+        # 这里只做演示，就不搞那么骚气的写法了
+        while cur:
+            # 记录当前节点的下一个节点
+            tmp = cur.next
+            # 然后将当前节点指向pre
+            cur.next = pre
+            # pre和cur节点都前进一位
+            pre = cur
+            cur = tmp
+        return pre	    
     
 if __name__ == '__main__':
     l = LinkList()
@@ -55,6 +71,8 @@ if __name__ == '__main__':
     print("\n")
     l1=l.deleteDuplicates(l1)
     l.printlist(l1)
-    # print("\n")
+    print("\n")
+    l1 = l.reverseList(l1)
+    l.printlist(l1)
 
 
