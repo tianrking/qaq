@@ -25,7 +25,7 @@ class LinkedList:
   
 # print method for the linked list
     def printLL(self):
-        current = self.head
+        current = self.head 
         while(current):
             print(current.data)
             current = current.next  # type: ignore
