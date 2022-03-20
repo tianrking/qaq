@@ -117,23 +117,33 @@ class LinkList:
             A.append(A[-1].next)
         return A[len(A) // 2]
 
+    # 1290. 二进制链表转整数
+    def getDecimalValue(self, head: ListNode) -> int:
+        cur = head
+        ans = 0
+        while cur:
+            ans = ans * 2 + cur.val
+            cur = cur.next
+        return ans
 
       
     
 if __name__ == '__main__':
     l = LinkList()
-    data1 = [1, 1, 2, 1,3,4]
+    data1 = [1, 1,0,1]
     data2 = [2,3,6]
     l1=l.initList(data1)
     l2=l.initList(data2)
     # l3=l.mergeTwoLists(l1,l2) # 怎样合并完不修改本链表
     
-    l.printlist(l1)
+    a = l.getDecimalValue(l1)
+    print(a)
+    # l.printlist(l1)
     # print("\n")
     # # l.deleteNode(l1,1)  # type: ignore
-    print("\n")
-    l1 = l.middleNode_1(l1)
-    l.printlist(l1)
+    # print("\n")
+    # l1 = l.middleNode_1(l1)
+    # l.printlist(l1)
     # print(data1[::-1])
     
     # l.removeElements(l3,2)  # type: ignore

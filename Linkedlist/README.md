@@ -11,3 +11,9 @@
 
 
 #### [237. 删除链表中的节点](https://leetcode-cn.com/problems/delete-node-in-a-linked-list/)
+
+
+#### [876. 链表的中间结点](https://leetcode-cn.com/problems/middle-of-the-linked-list/)
+
+
+#### [1290. 二进制链表转整数](https://leetcode-cn.com/problems/convert-binary-number-in-a-linked-list-to-integer/)
