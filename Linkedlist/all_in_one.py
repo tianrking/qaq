@@ -125,6 +125,32 @@ class LinkList:
             ans = ans * 2 + cur.val
             cur = cur.next
         return ans
+    
+    # 剑指 Offer 06. 从尾到头打印链表
+    from typing import List
+    def reversePrint(self, head: ListNode) -> List[int]:
+        # cur = head
+        # A = []
+        # while cur is not None :
+        #     A.append(cur.val)
+        #     cur = cur.next
+        # A = A[::-1]
+        # return A
+        return self.reversePrint(head.next) + [head.val] if head else []
+    
+    # 剑指 Offer 25. 合并两个排序的链表
+    
+    def mergeTwoLists_Jianzhi_Offer(self, l1: ListNode, l2: ListNode) -> ListNode:
+           
+        cur = dum = ListNode(0)
+        while l1 and l2:
+            if l1.val < l2.val:
+                cur.next, l1 = l1, l1.next
+            else:
+                cur.next, l2 = l2, l2.next
+            cur = cur.next
+        cur.next = l1 if l1 else l2
+        return dum.next
 
       
     
@@ -134,10 +160,11 @@ if __name__ == '__main__':
     data2 = [2,3,6]
     l1=l.initList(data1)
     l2=l.initList(data2)
-    # l3=l.mergeTwoLists(l1,l2) # 怎样合并完不修改本链表
+    l3=l.mergeTwoLists(l1,l2) # 怎样合并完不修改本链表
+    l.printlist(l3)
     
-    a = l.getDecimalValue(l1)
-    print(a)
+    # a = l.getDecimalValue(l1)
+    # print(a)
     # l.printlist(l1)
     # print("\n")
     # # l.deleteNode(l1,1)  # type: ignore
